@@ -16,14 +16,28 @@
   <!-- Custom styles for this template -->
   <link href="static/css/000009scrolling-nav.css" rel="stylesheet">
 
+  <link href="static/css/random.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <style>
+  /* Make the image fully responsive */
+  .carousel-inner img {
+      width: 100%;
+      height: 100%;
+  }
+  </style>
+
 </head>
 
 <body id="page-top">
 
-  <!-- Navigation 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav" >
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">Deeplastify</a>
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">Start Bootstrap</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -87,10 +101,114 @@
   <section id="services" class="bg-light">
     <div class="container">
       <div class="row">
+        
         <div class="col-lg-8 mx-auto">
-          <h2>Services we offer</h2>
-          <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut optio velit inventore, expedita quo laboriosam possimus ea consequatur vitae, doloribus consequuntur ex. Nemo assumenda laborum vel, labore ut velit dignissimos.</p>
+          
+          <h2 class="text-center">Guess where your PET bottle came from:</h2>
+          
+
+          <div id="demo" class="carousel slide" data-ride="carousel" data-interval="false">
+
+              <!-- Indicators -->
+              <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+                <li data-target="#demo" data-slide-to="2"></li>
+              </ul>
+            
+              <!-- The slideshow -->
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="/static/0.jpeg" alt="Los Angeles">
+                  <!--
+                  <div class="carousel-caption">
+                      <p style="background-color: black;">A PET 1L water bottle. It took about 3L of water to make it, up to 250 ml of oil. It is up to you to decide how it's journey continues... please chose wisely.</p>
+                  </div>
+                -->
+                  <div class="carousel-caption d-none d-md-block bg-dark mb-4">
+                      <h5>Second slide label</h5>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>    
+
+                </div>
+                <div class="carousel-item">
+                  <img class="carousel-image" src="/static/1.png" alt="Chicago">
+                  <div class="carousel-caption">
+                      <!--<h3>Chicago</h3>-->
+                      <p style="background-color: black;">A PET bottle is made by meting PET pellets and molding them into shape.</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="/static/2.png" alt="New York">
+                  <div class="carousel-caption">
+                      <!--<h3>Chicago</h3>-->
+                      <p style="background-color: black;">Metal molds to shape PET bottles.</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="/static/3.png" alt="New York">
+                    <div class="carousel-caption">
+                        <!--<h3>Chicago</h3>-->
+                        <p style="background-color: black;">PET pellets, ready to be further melted and processed in different shapes.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="/static/4.jpg" alt="New York">
+                    <div class="carousel-caption">
+                        <!--<h3>Chicago</h3>-->
+                        <p style="background-color: black;">Fine chemicals ready to be transformed in PET pellets. PET Stands for polyethylene terephthalate, it's a form of polyester. It's chemical formula is (C10H8O4)n , which means it's fundamental building blocks are Carbon, Oxygen and Hydrogen atoms.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="/static/5.jpg" alt="New York">
+                    <div class="carousel-caption">
+                        <!--<h3>Chicago</h3>-->
+                        <p style="background-color: black;">Oil is treated and processed in complex factories, refineries, which produce chemical needed for further processing.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="/static/6.jpg" alt="New York">
+                    <div class="carousel-caption">
+                        <!--<h3>Chicago</h3>-->
+                        <p style="background-color: black;">Oil is often transported by sea. Super tankers are huge ships (their length is comparable to the height of major skyscrapers).</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="/static/7.png" alt="New York">
+                    <div class="carousel-caption">
+                        <!--<h3>Chicago</h3>-->
+                        <p style="background-color: black;">Oil is collected and stored from wells and transported further to refineries with pipelines or ships for example.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="/static/8.png" alt="New York">
+                    <div class="carousel-caption">
+                        <!--<h3>Chicago</h3>-->
+                        <p style="background-color: black;">Oil extraction. Oil is a form of fossil fuel. It is a form of solar energy that was captured millions of years ago by plants in the form of chemicals containing Carbon, Oxygen and Hydrogen. It is a precious and finite, non-renewable resource.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="/static/9.png" alt="New York">
+                    <div class="carousel-caption">
+                        <!--<h3>Chicago</h3>-->
+                        <p style="background-color: black;">Oil rig in the ocean. Finding and extracting more oil is a challenge. The exploration for oil involves all sorts of different complex technologies and environments on land, and in the oceans.</p>
+                    </div>
+                  </div>
+              </div>
+            
+              <!-- Left and right controls -->
+              <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+              </a>
+              <a class="carousel-control-next" href="#demo" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+              </a>
+            
+          </div>
         </div>
+        
+      
+        
       </div>
     </div>
   </section>
@@ -98,9 +216,12 @@
   <section id="contact">
     <div class="container">
       <div class="row">
-        <div class="col-lg-8 mx-auto">
-          <h2>Contact us</h2>
-          <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero odio fugiat voluptatem dolor, provident officiis, id iusto! Obcaecati incidunt, qui nihil beatae magnam et repudiandae ipsa exercitationem, in, quo totam.</p>
+        <div class="col-lg-8 mx-auto text-center">
+          <button class="button button1">$ DONATE $</button>
+          <p>
+            <em>To the wonderful creators of DEEPlastify.
+            </em>
+          </p>
         </div>
       </div>
     </div>
