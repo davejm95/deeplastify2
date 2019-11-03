@@ -1,4 +1,4 @@
-from src.airtable import airtable
+from my_app.airtable import airtable
 
 at = airtable.Airtable('appG0JiXjmaxZgcQ7', 'key1GfTb9F6DsLhys')
 
