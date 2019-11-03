@@ -23,6 +23,10 @@ def index():
             if i['fields'].get('Category')[0] == category['id']:
                 # if there is a blog for this item, then add it
                 b = i['fields'].get('BlogText')
+                if b is None:
+                    b=''
+                else:
+                    b=b[0]
                 catItems.append({'id': i['fields'].get('ID'), 'name': i['fields'].get('Name'),
                                  'weight': i['fields'].get('Weight'), 'time': i['fields'].get('TimeID')[0],
                                  'blog': b})
@@ -34,4 +38,4 @@ def index():
 
 
 if __name__ == '__main__':
-    # app.run()
+     app.run(host="0.0.0.0",port=80)

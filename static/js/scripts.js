@@ -23,13 +23,22 @@ $(function(){
         var amount=$('#amount').val();
         
         var itemPlastic=amount*item.val()*365/timespan;
-        console.log(itemPlastic)
-        
-        $('#loggedPlastic tr:last').before('<tr><td>'+item.text()+'</td><td>'+Math.round(itemPlastic)+'g</tr>')
-
+        var blog=item.attr('data-blog');
+        if (blog==''){
+            var storybtn='';
+        }
+        else{
+            var storybtn='<button type="button" class="btn btn-outline-success" data-toggle="popover" title="Pro tip" data-content="'+blog+'">Read Story</button>'
+        }
+        $('#loggedPlastic tr:first').after('<tr><td>'+item.text()+'</td><td>'+Math.round(itemPlastic)+'g &nbsp;&nbsp;&nbsp; '+storybtn+' </tr>')
+        $('[data-toggle="popover"]').popover()
         
         totalPlastic=totalPlastic+parseFloat(itemPlastic);
         $('#totalPlastic').val(Math.round(totalPlastic));
         $('#tableTotal').html((totalPlastic/1000).toFixed(2));
+    })
+
+    $(function () {
+        $('[data-toggle="popover"]').popover()
     })
 });
