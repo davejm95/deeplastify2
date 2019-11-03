@@ -1,0 +1,9 @@
+diff a/app.py b/app.py	(rejected hunks)
+@@ -0,0 +1,6 @@
++from flask import Flask
++app = Flask(__name__)
++
++@app.route('/')
++def hello_world():
++    return 'Hello, World5!'
+\ No newline at end of file
