@@ -55,6 +55,7 @@
       <div class="row">
         <div class="col-lg-8 mx-auto">
           <h2>Calculator</h2>
+          {% block calculator %}
           <form method="POST" action="">
             
             <div class="form-group">
@@ -64,12 +65,19 @@
 
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
-          <ul>
-            <li>Clickable nav links that smooth scroll to page sections</li>
-            <li>Responsive behavior when clicking nav links perfect for a one page website</li>
-            <li>Bootstrap's scrollspy feature which highlights which section of the page you're on in the navbar</li>
-            <li>Minimal custom CSS so you are free to explore your own unique design options</li>
-          </ul>
+          {% endblock %}
+          <table class="table" id="loggedPlastic">
+            <thead>
+              <tr><th>Item</th><th>Amount of Plastic per Year</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><b>Total:</b></td><td><b><span id="tableTotal">0</span>g</b></td></tr>
+            </tbody>
+          </table>
+          <form method="POST" action="">
+            <input type="hidden" id="totalPlastic" value="0">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
         </div>
       </div>
     </div>
@@ -114,7 +122,7 @@
 
   <!-- Custom JavaScript for this theme -->
   <script src="static/js/000010scrolling-nav.js"></script>
-
+  <script src="static/js/scripts.js"></script>
 </body>
 
 </html>
