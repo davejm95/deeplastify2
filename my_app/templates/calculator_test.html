@@ -1,0 +1,46 @@
+{% extends "index.html" %}
+
+{% block calculator %}
+
+<div class="row">
+<div class="form-group col">
+    <label for="cat">Category:</label>
+    <select class="form-control" id="cat">
+        {% for cat in categories %}
+        <option value="{{cat.id}}">{{cat.name}}</option>
+        {% endfor %}
+    </select>
+</div>
+
+{% for cat in categories %}
+<div class="form-group items-cat col" style="display:none;" id="cat{{cat.id}}">
+    <label for="items-cat">Item:</label>
+    <select class="form-control" >
+        {% for item in cat.catItems %}
+        <option value="{{item.id}}">{{item.name}}</option>
+        {% endfor %}
+    </select>
+
+</div>
+{% endfor %}
+
+
+<div class="form-group col">
+    <label for="amount">Amount:</label>
+    <input type="number" id="amount" class="form-control" />
+</div>
+
+<div class="form-group col">
+    <label for="time">per</label>
+    <select class="form-control" id="time">
+        <option value="1">Day</option>
+        <option value="7">Week</option>
+        <option value="30">Month</option>
+        <option value="365">Year</option>
+    </select>
+</div>
+<button type="button" class="btn btn-primary" id="addbtn">Add</button>
+
+</div>
+
+{% endblock %}

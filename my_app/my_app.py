@@ -1,28 +1,7 @@
 from flask import Flask, render_template, request
-from my_app.airtable import airtable
+from airtable import airtable
 
 app = Flask(__name__)
-
-
-class Item:
-    def __init__(self, id, name, weight, time):
-        self.id = id
-        self.name = name
-        self.weight = weight
-        self.time = time
-
-
-class Cat:
-    def __init__(self, id, name, items):
-        self.id = id
-        self.name = name
-        self.items = items
-
-
-items1 = [Item(1, 'bottle', 18, 1), Item(2, 'Fork', 5, 7)]
-items2 = [Item(1, 'shirt', 50, 30), Item(2, 'pulli', 100, 365)]
-categories=[Cat(1,'Food',items1),Cat(2,'clothes',items2)]
-
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -38,19 +17,19 @@ def index():
     cat = []
 
     for category in at.get('Category').get('records'):
-        items = []
+        catItems = []
 
         # add the items which are in this category to the item-list
         for i in allItems.get('records'):
             if i['fields'].get('Category')[0] == category['id']:
                 time = i['fields'].get('TimeID')[0]
-                items.append({'id': i['fields'].get('ID'), 'name': i['fields'].get('Name'),
+                catItems.append({'id': i['fields'].get('ID'), 'name': i['fields'].get('Name'),
                               'weight': i['fields'].get('Weight'), 'time': i['fields'].get('TimeID')[0]})
 
         # add id, name and all items of this category to the cat-list
-        cat.append({'id': category['fields'].get('ID'), 'name': category['fields'].get('Name'), 'items': items})
+        cat.append({'id': category['fields'].get('ID'), 'name': category['fields'].get('Name'), 'catItems': catItems})
 
-    return render_template('calculator.html', categories=cat)
+    return render_template('calculator_test.html', categories=cat)
 
 
 if __name__ == '__main__':
