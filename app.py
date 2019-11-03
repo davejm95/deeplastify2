@@ -34,7 +34,7 @@ def index():
         # add id, name and all items of this category to the cat-list
         cat.append({'id': category['fields'].get('ID'), 'name': category['fields'].get('Name'), 'catItems': catItems})
 
-    return render_template('calculator_test.html', categories=cat)
+    return render_template('calculator.html', categories=cat)
 
 
 if __name__ == '__main__':

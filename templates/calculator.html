@@ -10,24 +10,21 @@
         <option value="{{cat.id}}">{{cat.name}}</option>
         {% endfor %}
     </select>
-</div> 
+</div>
 
 {% for cat in categories %}
 <div class="form-group items-cat col" style="display:none;" id="cat{{cat.id}}">
     <label for="items-cat">Item:</label>
     <select class="form-control" >
-        {% for item in cat.items %}
-        <option value="{{item.weight}}" data-time="{{item.time}}">{{item.name}}</option>
+        {% for item in cat.catItems %}
+        <option value="{{item.id}}" data-time="{{item.time}}">{{item.name}}</option>
         {% endfor %}
     </select>
 
-</div> 
-
-{% endfor %}
-
 </div>
-
-
+{% endfor %}
+<div class="col-1"></div>
+</div>
 <div class="row">
 <div class="form-group col">
     <label for="amount">Amount:</label>
@@ -43,8 +40,10 @@
         <option value="365">Year</option>
     </select>
 </div>
+<div class="col-1">
 <button type="button" class="btn btn-primary" id="addbtn">Add</button>
+</div>
 
 </div>
-</div>
+
 {% endblock %}
