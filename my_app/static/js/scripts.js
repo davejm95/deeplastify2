@@ -20,11 +20,14 @@ $(function(){
         var item=$('#cat'+selectedCat+' option:selected');
         var amount=$('#amount').val();
         
-        var itemPlastic=int(amount*item.val()*365/timespan);
+        var itemPlastic=amount*item.val()*365/timespan;
         
         $('#loggedPlastic tr:last').before('<tr><td>'+item.text()+'</td><td>'+itemPlastic+'</tr>')
-        var totalPlastic=1.0*itemPlastic+1.0*$('#totalPlastic').val();
-        $('#totalPlastic').val(totalPlastic);
-        $('#tableTotal').html(totalPlastic);
+        if (typeof window.totalPlastic=='undefined'){
+            window.totalPlastic=0;
+        }
+        window.totalPlastic=window.totalPlastic+itemPlastic;
+        $('#totalPlastic').val(totalPlastic.toFixed(0));
+        $('#tableTotal').html(totalPlastic.toFixed(0));
     })
 });
