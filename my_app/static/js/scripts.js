@@ -1,3 +1,4 @@
+var totalPlastic=0
 $(function(){
     $('#cat1').show();
     $('#cat').val(1);
@@ -9,8 +10,9 @@ $(function(){
     });        
     $(".items-cat").change(function () {
             var time2 = $(this).find("option:selected").attr("data-time");
-            console.log($(this).find("option:selected").attr("data-time"))
-            $('#time').val(time2)
+            timespans=[0,1,7,30,365];
+            console.log(timespans[parseInt(time2)])
+            $('#time').val(timespans[parseInt(time2)]);
 
     })
     $('#addbtn').click(function(){
@@ -21,13 +23,13 @@ $(function(){
         var amount=$('#amount').val();
         
         var itemPlastic=amount*item.val()*365/timespan;
+        console.log(itemPlastic)
         
-        $('#loggedPlastic tr:last').before('<tr><td>'+item.text()+'</td><td>'+itemPlastic+'</tr>')
-        if (typeof window.totalPlastic=='undefined'){
-            window.totalPlastic=0;
-        }
-        window.totalPlastic=window.totalPlastic+itemPlastic;
-        $('#totalPlastic').val(totalPlastic.toFixed(0));
-        $('#tableTotal').html(totalPlastic.toFixed(0));
+        $('#loggedPlastic tr:last').before('<tr><td>'+item.text()+'</td><td>'+Math.round(itemPlastic)+'g</tr>')
+
+        
+        totalPlastic=totalPlastic+parseFloat(itemPlastic);
+        $('#totalPlastic').val(Math.round(totalPlastic));
+        $('#tableTotal').html((totalPlastic/1000).toFixed(2));
     })
 });
